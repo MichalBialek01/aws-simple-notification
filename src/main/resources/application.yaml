@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: aws-simple-notification-project
+  cloud:
+    aws:
+      credentials:
+        profile:
+          name: InteliJ_access
+

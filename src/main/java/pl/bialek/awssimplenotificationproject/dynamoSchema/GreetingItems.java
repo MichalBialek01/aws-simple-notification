@@ -1,4 +1,4 @@
-package pl.bialek.awssimplenotificationproject.dynamoMapper;
+package pl.bialek.awssimplenotificationproject.dynamoSchema;
 
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
