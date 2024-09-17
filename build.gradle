@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.3'
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'pl.bialek'
+version = '1.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        exclude group: "org.apache.geronimo.specs", module: "geronimo-servlet_2.5_spec"
+        exclude group: "ch.qos.logback", module: "logback-core"
+    }
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    implementation(platform("software.amazon.awssdk:bom:2.28.0"))
+    implementation 'software.amazon.awssdk:dynamodb'
+    implementation("software.amazon.awssdk:dynamodb-enhanced")
+    implementation 'software.amazon.awssdk:sns'
+
+
+
+}
+
+
+
+
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
