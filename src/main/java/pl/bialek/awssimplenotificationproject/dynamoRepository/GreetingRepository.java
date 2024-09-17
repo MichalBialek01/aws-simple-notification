@@ -1,4 +1,4 @@
-package pl.bialek.awssimplenotificationproject.dynamoMapper;
+package pl.bialek.awssimplenotificationproject.dynamoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,11 +12,11 @@ import software.amazon.awssdk.services.dynamodb.model.DynamoDbException;
 
 @Component("DynamoDBEnhanced")
 
-public class DynamoDBEnhanced {
+public class GreetingRepository {
 
     private final DynamoDbEnhancedClient dynamoDbEnhancedClient;
     @Autowired
-    public DynamoDBEnhanced(DynamoDbEnhancedClient dynamoDbEnhancedClient) {
+    public GreetingRepository(DynamoDbEnhancedClient dynamoDbEnhancedClient) {
         this.dynamoDbEnhancedClient = dynamoDbEnhancedClient;
     }
 
